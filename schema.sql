@@ -9,7 +9,8 @@ create table user (
 drop table if exists follower;
 create table follower (
   who_id integer,
-  whom_id integer
+  whom_id integer,
+  primary key(who_id, whom_id)
 );
 
 drop table if exists message;

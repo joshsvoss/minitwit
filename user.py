@@ -1,6 +1,10 @@
 from app import db
 from werkzeug import generate_password_hash
 
+def select_user(username):
+    """Return the user with username"""
+    return db.session.query.filter(username=username).first()
+
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80))

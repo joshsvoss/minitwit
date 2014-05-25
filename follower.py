@@ -1,9 +1,10 @@
 from app import db
 
-class Follower(db.Model):
-    who_id = db.Column(db.Integer, db.ForeignKey('person.user_id'))
-    whom_id = db.Column(db.Integer, db.ForeignKey('person.user_id'))
+Follower = db.Table('follower',
+    db.Column('who_id', db.Integer, db.ForeignKey('user.user_id')),
+    db.Column('whom_id', db.Integer, db.ForeignKey('user.user_id')))
 
-    def __init__(self, who, whom):
-        self.who_id = who
-        self.whom_id = whom
+
+def follows(follower, user): #TODO: Test this!
+    return Follower.select(who_id=follower.user_id,
+                           whom_id=user.user_id)
