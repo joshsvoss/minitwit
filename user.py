@@ -1,4 +1,4 @@
-from app import db
+from minitwit import db
 from werkzeug import generate_password_hash
 
 def select_user(username):
