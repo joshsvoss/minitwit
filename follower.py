@@ -1,4 +1,4 @@
-from app import db
+from minitwit import db
 
 Follower = db.Table('follower',
     db.Column('who_id', db.Integer, db.ForeignKey('user.user_id')),

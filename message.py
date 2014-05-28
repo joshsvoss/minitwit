@@ -1,4 +1,4 @@
-from app import db
+from minitwit import db
 
 def get_all_messages():
     """Query the database for all messages from all users"""
